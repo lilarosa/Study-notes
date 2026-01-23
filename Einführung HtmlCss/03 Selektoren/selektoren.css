@@ -1,0 +1,29 @@
+/* Typselektor */
+/* gestaltet alle Elemente eines bestimmten Typs */
+
+h1 {
+    color: cadetblue;
+}
+
+/* Klassenselektor */
+/* gestaltet alle Elemente, die im class Attribut den entsprechenden Namen haben */
+
+.wichtig {
+    color: brown;
+}
+
+.unterstrichen {
+    text-decoration: underline;
+}
+
+/* ID Selektor */
+/* gestaltet das Element, das im id Attribut den entsprechenden Bezeichner hat */
+#einzigartig {
+    font-style: italic;
+}
+
+/* Kindselektor */
+/*wählt nur die span Elemente aus, die Kind von p sind*/
+p > span {
+    font-weight: bolder;
+}

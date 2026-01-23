@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+ 
+        td, th {
+            border: 1px solid;
+            padding: 0 0.5rem;;
+        }
+ 
+        .left {
+            text-align: left;
+        }
+ 
+        .right {
+            text-align: right;
+        }
+ 
+        .center {
+            text-align: center;
+        }
+ 
+        .tab2 th{
+            width: 150px;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+    <h2>Stadtrundfahrten in Berlin</h2>
+ 
+    <table>
+        <tr>
+            <td colspan="3">Angebotene Stadtrundfahrten in Berlin</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Angebotene Stadtrundfahrten in Berlin</td>
+            <th class="left">Tour 1</th>
+            <th class="left">Tour 2</th>
+        </tr>
+        <tr>
+            <td>Ku´Damm</td>
+            <td>Brandenburger Tor</td>
+        </tr>
+        <tr>
+            <td>Gedächtniskirche</td>
+            <td>Unter den Linden</td>
+        </tr>
+        <tr>
+            <td>Siegessäule</td>
+            <td>Gendarmenmarkt</td>
+        </tr>
+    </table>
+ 
+    <hr>
+ 
+    <h2>Katalogbestellung</h2>
+ 
+    <table class="tab2">
+        <tr>
+            <td colspan="4" class="center">Produktübersicht</td>
+        </tr>
+        <tr>
+            <th class="left">Artikel</th>
+            <th colspan="2">Größe</th>
+            <th class="right">Preis</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Rock</td>
+            <td class="center">36 - 38</td>
+            <td class="center">40 - 42</td>
+            <td class="right">49,95 &euro;</td>
+        </tr>
+        <tr>
+            <td class="center">44 - 48</td>
+            <td class="center">ab 50</td>
+            <td rowspan="2" class="right">79,95 &euro;</td>
+        </tr>
+        <tr>
+            <td>Hose</td>
+            <td colspan="2" class="center">alle Größen</td>
+        </tr>
+    </table>
+ 
+</body>
+ 
+</html>
+ 

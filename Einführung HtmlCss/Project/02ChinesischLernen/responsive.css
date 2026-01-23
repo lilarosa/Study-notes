@@ -1,0 +1,87 @@
+
+
+
+@media (max-width:768px){
+    body{
+        max-width: 100vh;
+        padding: 0;
+        margin: 0 auto ;
+       
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d";
+        width: 100vh;
+        /* max-width: 100vh; */
+    }
+    
+    .header{
+        width: 100%;
+        text-align: center;}
+       
+
+    
+    aside{
+        
+        padding: 0.5rem;
+        margin: 1rem auto;
+        background:none;
+        border: none;
+        box-shadow: none;
+       
+    }
+    aside ul{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+       
+}
+
+    aside ul  li{
+        
+        width: 100%;
+        gap:1rem;
+        height: auto;
+        font-size:1.2rem;
+        background-size: cover;
+         background: none;
+       
+    }
+    .taskarea{
+        display: flex;
+        flex-direction:column ;
+
+    }
+    /* .scoreArea{
+        position: static;
+        margin: 1rem auto;
+
+    } */
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

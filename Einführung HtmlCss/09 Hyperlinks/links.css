@@ -1,0 +1,18 @@
+a:link{
+    color: brown;
+}
+a:visited{
+    color: green;
+}
+a:hover{
+    color: red;
+    font-size: 3rem;
+}/* nur für Mausbedienung */
+
+a:focus{
+    color: blue;
+}/* nur für Tastaturbedienung */
+
+a:active{
+    color: yellow;
+}/* nur wenn drücken  */
