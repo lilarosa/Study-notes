@@ -5,17 +5,14 @@ Dies ist mein zentrales Repository für alle Kursmaterialien und Hausaufgaben. H
 ## 🎓 Kurse
 * **Kursname 1** (z.B. Informatik) - `/Kurs-1`
 * **Kursname 2** (z.B. Programmierung) - `/Kurs-2`
-* **Unterricht bei Frau Höppner-Billen** - `/Frau-Hoeppner-Billen`
+
 
 ## 🛠️ Tech-Stack
 * **Editor:** VS Code
-* **Sprachen:** Python, Java (bitte anpassen)
+* **Sprachen:** Python, Java 
 * **Betriebssystem:** Windows
 
-## 🚀 Status
-- [x] Repository erstellt
-- [ ] Alle aktuellen Hausaufgaben hochgeladen
-- [ ] Dokumentation der Projekte ergänzen
+
 
 ---
 *Erstellt von lilarosa im Jahr 2026.*
