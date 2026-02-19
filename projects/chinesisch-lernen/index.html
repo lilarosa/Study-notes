@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Chinesisch-Lernportal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Comic+Relief:wght@400;700&family=Fredoka:wght@300..700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<link  rel="stylesheet" href="all.css">
+<link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+  
+    
+    <div class="container">
+        
+    <header>
+        <!-- <div class="header"> -->
+        <h1>🌸 Chinesisch lernen mit Spaß-Für Kinder  🐼🎈 🌸</h1>
+         <p> ✨Ein Projekt für Kinder – Spielerisch Hanzi entdecken ✨</p>
+        <!-- </div> -->
+    </header>  
+    
+        <aside>
+         <h3>📚Navigation</h3>   
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="hanzi.html">Lektionen</a></li>
+            <li><a href="game.html">Spiele</a></li>
+            <li><a href="homework.html">Aufgabe</a></li>
+            <li><a href="feedback.html">Kontakt</a></li>
+            <li><a href="about.html">About</a></li>
+            
+        </ul>
+       </aside>
+    
+         <main>
+            <section class="welcome">
+            <h2>🥳Willkommen!🥳</h2>
+            <p>Diese Website hilft Kindern, die Grundlagen der Chinesischen Schriftzeichen mit Freunde zu lernen.</p>
+            </section>
+
+            <section class="taskTitle">
+                <h2> Was machen wir hier?</h2>
+
+    <div class="taskarea">
+        <div class="card" >
+            <h3>本周生字复习<br>🌻Schriftzeichen dieser Woche🌻</h3>
+        <div class="word-grid">
+            <div class="wordCard" >谢<img class="stroke-img" src="video/XIE-35874.gif" ></div>
+            <div class="wordCard" >没<img class="stroke-img" src="video/MEI.gif" ></div>
+            <div class="wordCard" >记<img class="stroke-img" src="video/JI.gif" ></div>
+            <div class="wordCard" >请<img class="stroke-img" src="video/QING.gif" ></div>
+            <div class="wordCard" >把<img class="stroke-img" src="video/BA.gif" ></div>
+            <div class="wordCard" >唱<img class="stroke-img" src="video/CHANG.gif"></div>
+            <div class="wordCard" >对<img class="stroke-img" src="video/DUI.gif"></div>
+            <div class="wordCard" >系<img class="stroke-img" src="video/XI.gif"></div>
+            <div class="wordCard" >拍<img class="stroke-img" src="video/PAI.gif"></div>
+            <div class="wordCard" >起<img class="stroke-img" src="video/QI.gif"></div>
+            <div class="wordCard" >拿<img class="stroke-img" src="video/NA.gif"></div>
+            <div class="wordCard" >着<img class="stroke-img" src="video/ZHE.gif"></div>
+        </div>
+        </div>
+    
+        <div class="card" id="poem-card"> 
+            <h3 id="poemToday">今日古诗<br>Gedicht zum Tag</h3> 
+            <p id="poem-title"><strong>静 夜 思<br> 唐 李白</strong></p>
+            <div class="poemLine">
+            <span class="poemCh">床 前 明 月 光，</span>
+            <span class="poemDe"> Vor meinem Bett ein heller Schein,</span>
+            </div>
+            <div class="poemLine">
+            <span class="poemCh">疑 是 地 上 霜，</span>
+            <span class="poemDe">Ich dachte,es sei Reif so rein.</span>
+            </div>
+            <div class="poemLine">
+             <span class="poemCh">举 头 望 明 月，</span>
+             <span class="poemDe">Ich hob den Blick zum Mond so klar,</span>
+             </div>
+             <div class="poemLine">
+             <span class="poemCh">低 头 思 故 乡。</span>
+             <span class="poemDe">Senkte ihn dann-die Heimat war mir nah.</span>
+            </div>
+        </p>
+            <button id="btnPoem"  onclick="marked()">Erledigt！</button>
+            <img src="img/GUZHANG-unscreen.gif" id="prizePic" alt="applauding poem">
+        </div>
+
+        <div class="card">
+             <div class="flash-card"><p id="title">Wähle das richtige Wort, das zum Bild passt.</p></div>
+              <button class="nextImage" onclick="showNext()">Start</button>
+              
+        </div>
+        <div class="scoreArea">
+        <p>👏Bravo! Du hast <br><span id="scoreResult">?</span><br>Punkte gesammelt! </p>
+    </div>
+        </div>
+            </section>
+         </main>
+         
+         <div class="checkIn">
+            <h2>Ich bin da📆</h2>
+            <p>Heute ist: <span id="date"></span></p>
+            <button id="btnCheck"  onclick="checkin()">Heute dabei!</button>
+            <table id="table" border="1">
+              <tr>
+                <th>Datum</th>
+                <th>Name</th>
+                <th>Anwesenheit</th>
+              </tr>
+            </table>
+         </div> 
+
+         <div class="calenderArea">
+            <h3 class="terminTitle">Unsere Unterrichtstermine</h3>
+            <!-- <button id="btnCalender" onclick="calender()">calender</button> -->
+         </div>
+
+         <footer>
+         © 2025 – HTML-Projektarbeit: Chinesisch lernen mit Spaß 🐲
+          <p>Kontakt: <a href="mailto:sprachlernenmitspaß@email.de">sprachlernenmitspaß@email.de</a></p>
+          <p>Erstellt von Tao Wang im Rahmen des Webprojekts 2025.</p>
+         </footer>
+         
+     </div> 
+    
+   
+    
+<script src="all.js"></script>
+</body>
+</html>

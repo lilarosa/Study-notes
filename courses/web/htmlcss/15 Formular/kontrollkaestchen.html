@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> checkbox </title>
+
+    <style>
+        /* CSS für die Beschriftung */
+        label {
+            /* display: block; */
+           
+        }
+        /* CSS für die Eingabefelder */
+        input {
+            /* width: 20px;
+            height: 20px; */
+        }
+        /* label::after {
+            content: "kkk";
+        }
+    </style> */
+
+</head>
+<body>
+
+    <!-- CHECKBOX Choice for Yes or No -->
+    <h2> checkbox</h2>
+    <form action="#">
+         <input type="checkbox" id="info" name="info" value="ja" >     <!-- checked -->
+         <label for="info">Bitte schicken Sie mir Informatriel</label>
+
+            <br><br>
+
+   <!-- radiobutton Choice for One possible  -->
+         <!-- name (variable) and value ist for the Dataverarbeitung Software -->
+
+         <input type="radio" id="de" name="Land" value="de"> 
+         <label for="de">Deutschland</label>
+
+         <input type="radio" id="at" name="Land" value="at">
+         <label for="at">Österreich</label>
+
+         <input type="radio" id="ch" name="Land" value="ch">
+         <label for="ch">Schweiz</label>
+
+<!-- fieldset (nicht nur für Radiobuttons) -->
+
+         <fieldset>
+            <legend>In welchen Land whonen Sie</legend>
+            <div>
+                <input type="radio" id="de" name="land" value="de">
+                <label for="de">Deutschland</label>
+            </div>
+ 
+            <div>
+                <input type="radio" id="at" name="land" value="at">
+                <label for="at">Österreich</label>
+            </div>
+ 
+            <div>
+                <input type="radio" id="ch" name="land" value="ch">
+                <label for="ch">Schweiz</label>
+            </div>
+        </fieldset>
+ 
+    </form>
+</body>
+</html>   
+

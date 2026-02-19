@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game_flashCards</title>
+</head>
+<body>
+    <div class="flashCards">
+        <figure class="card">
+            
+
+
+        </figure>
+        
+    </div>
+    <div class="answers">
+        <label for="answer0"></label>
+        <input type="radio" name="answer" id="answer0" value="0">
+
+        <label for="answer1"></label>
+        <input type="radio" name="answer" id="answer1" value="1">
+
+        <label for="answer2"></label>
+        <input type="radio" name="answer" id="answer2" value="2">
+        
+        <label for="answer3"></label>
+        <input type="radio" name="answer" id="answer3" value="3">
+    
+    </div>
+</body>
+
+<script>
+    const img = ["👋😊", "🙏🎁","😢","👏"];
+    const answers = ["Hallo", "Danke", "Tschüss", "Gut gemacht"];
+    const card= document.createElement("div");
+    card.classList.add("card");
+    const flashCards = document.querySelector(".flashCards");
+    flashCards.appendChild(card);
+    const answerLabels = document.querySelectorAll(".answers label");
+    const answerInputs = document.querySelectorAll(".answers input");
+    const randomIndex = Math.floor(Math.random() * img.length);
+    card.innerHTML = `<p>${img[randomIndex]}</p>`;
+    answerLabels.forEach((label, index) => {
+        label.textContent = answers[index];
+        label.setAttribute("for", `answer${index}`);
+        answerInputs[index].setAttribute("id", `answer${index}`);
+    });
+    answerInputs.forEach((input, index) => {
+        input.addEventListener("change", () => {
+            if (index === randomIndex) {
+                alert("Richtig!");
+            } else {
+                alert("Falsch! Versuche es noch einmal.");
+            }
+        });
+    });
+    card.addEventListener("click", () => {
+        const newIndex = Math.floor(Math.random() * img.length);
+        card.innerHTML = `<p>${img[newIndex]}</p>`;
+        answerInputs.forEach(input => input.checked = false);
+    });
+    card.style.cursor = "pointer";
+    card.style.textAlign = "center";
+    card.style.fontSize = "2rem";
+    card.style.padding = "20px";
+    card.style.border = "2px solid #000";
+    card.style.borderRadius = "10px";
+    card.style.backgroundColor = "#f0f0f0";
+    card.style.transition = "transform 0.3s";           
+    card.addEventListener("mouseover", () => {
+        card.style.transform = "scale(1.05)";
+    });
+    card.addEventListener("mouseout", () => {
+        card.style.transform = "scale(1)";
+    });
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.alignItems = "center";
+    document.body.style.height = "100vh";
+    document.body.style.backgroundColor = "#e0e0e0";
+    flashCards.style.display = "flex";
+
+    flashCards.style.justifyContent = "center";
+    flashCards.style.alignItems = "center";
+
+    flashCards.style.height = "100vh";
+    flashCards.style.flexDirection = "column";
+    flashCards.style.gap = "20px";
+    flashCards.style.fontFamily = "Arial, sans-serif";
+
+    
+</script>
+</html>
+

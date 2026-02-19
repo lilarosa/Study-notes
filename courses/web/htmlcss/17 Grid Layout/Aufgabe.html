@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Wäre nötig, wenn man in die divs Text packen will und diesen mittig in die Box */
+        /* .grid-item  {display: flex; justify-content: center; align-items: center;} */
+ 
+        .toe {
+            display: grid;
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: 80px 80px 80px;
+            gap: 5px;
+        }
+ 
+        .grid-item {
+            border: 1px solid silver;
+ 
+        }
+    </style>
+</head>
+ 
+<body>
+    <section>
+        <h2>Grid-Items ausrichten: align-self, justify-self und place-self</h2>
+        <p>Die Grid-Elemente selbst lassen sich – wie passend – mit <em>justify-self</em> in der Horizontalen und mit
+            <em>align-self</em> in der Senkrechten ausrichten.
+        </p>
+        <p> <em>place-self</em> richtet Elemente mit zwei Angaben vertikal und horizontal aus (align-self /
+            justify-self). Mit nur einem Wert spricht place-self beide Werte an.
+        <p>Voraussetzung ist wieder, dass die Grid-Elemente kleiner sind als das Platzangebot im Grid-Ccontainer.</p>
+ 
+        <div class="toe">
+            <div class="grid-item" style="width: 40px; height: 40px; align-self:center; background: hsl(70,50%,80%); ">
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item" style="width: 40px; height: 40px; align-self:end; background: hsl(170,50%,80%) ">
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item"
+                style="width: 40px; height: 40px; justify-self: center; background: hsl(240,50%,80%) "></div>
+            <div class="grid-item"></div>
+            <div class="grid-item" style="width: 40px; height: 40px; place-self: center center; background: hsl(300,50%,80%) ">
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item" style="width: 40px; height: 40px; justify-self: end; background: hsl(0,50%,80%) ">
+            </div>
+        </div>
+        <ul>
+            <li>grüne Box align-self: center;
+            <li>zyan Box align-self:end ;
+            <li>blaue Box justify-self: center;
+            <li>rosa Box place-self: center;
+            <li>rote Box justify-self: end;
+        </ul>
+ 
+    </section>
+</body>
+ 
+</html>

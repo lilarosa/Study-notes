@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EinkaufsListe</h1>
+    <label for="item">Artikel:</label>
+    <input type="text"  id="item" placeholder="Artikel hinzufügen" >
+    <button id="item" onclick="additem()">Add</button>
+    <button id="print" onclick="printList()">Drucken</button>
+
+</body>
+<script>
+    let einkaufsListe=[];
+    function additem(){
+        let kaufsItem = prompt( "Bitte Artikel eingeben");
+        einkaufsListe.push(kaufsItem);
+        alert("Artikel hinzugefügt: " + kaufsItem);
+        item.value = einkaufsListe; 
+        
+        // Hier wird der Wert des Eingabefelds aktualisiert
+    }
+    function printList(){
+        console.log("EinkaufsListe:");
+        for(let i=0; i<einkaufsListe.length; i++){
+            console.log(einkaufsListe[i]);
+        }
+
+    }
+
+    
+</script>
+</html>

@@ -1,0 +1,84 @@
+
+
+
+li{
+    list-style: none;
+    background-color: #333;
+    
+    flex: 1; 
+
+    /* glechmäßig verteilt */
+
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    text-align: center;
+    padding: 50px;
+    
+    
+    
+   
+    
+
+}
+  
+
+nav ul li:last-child{
+
+    border-right: 1px solid white;
+}
+
+
+a{
+    text-decoration: none;
+    
+    color: beige;
+    font-size: large;
+   
+    
+    
+
+    
+   
+    
+
+}
+
+
+nav ul{
+
+    display: flex;
+    flex-direction: row;
+    /* standardwert, muss nicht explizit notiert */
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+
+    /* center and gleißmßig verteilt */
+    /* flex-flow: row nowrap; kurzschreibweise für die beide Eingenschaften*/
+    padding-left: 0;
+    height: 50px;
+    
+    
+    
+    
+}
+
+.current{
+    background-color: #da3030;
+
+}
+li:hover, li:focus{
+    background-color: blue;
+    text-decoration: underline;
+}
+
+.nav_div li{
+
+    background-color:purple;
+
+
+}
+nav{
+    width: 900px;
+    height: 300px;
+    border: 2px solid green;
+}

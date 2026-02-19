@@ -1,0 +1,157 @@
+
+ 
+
+    body {
+      font-family: "Fredoka", sans-serif;
+      padding:20px;
+      text-align: center;
+      overflow: auto;
+      background-color: rgb(241, 248, 233);
+      border-image-source: url("img/border-image.png");
+      border-width: 70px;
+      border-style: solid;
+      border-image-slice: 35%;
+      border-image-repeat: round;
+      box-sizing: border-box;
+    }
+     button {
+      padding: 1rem 2rem;
+      font-size: 20px;
+      background-color: #ffcc80;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top:10px;
+      margin-bottom: 20px;
+    }
+
+
+.stepPoint {
+        width: 100px;
+        height: 90px;
+        /* background-color: #4caf50; */
+        border-radius: 50%;
+        margin: 10px;
+        position: absolute;
+        background-image:url("./img/lotus.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;    
+      }
+
+#a{
+    top: 40px;
+    left: 10px;
+}
+#b{
+    top: 195px;
+    left: 150px;
+}
+#c{
+    top: 120px;
+    left: 320px;
+    }
+#d{
+    top: 30px;
+    left: 450px;
+    }
+#e{
+    top: 20px;
+    left: 600px;
+    }
+ #f{
+    top: 90px;
+    left: 800px;
+    }
+#g{
+    top: 250px;
+    left: 850px;
+}
+    h1 {
+        font-size: 2rem;
+        color: #0077cc;
+        margin-bottom: 0.5rem;
+        margin-top: 10px;
+        padding-top: 90px;
+    }   
+
+    p{
+        max-width: 1000px;
+        text-align: center;
+        margin: auto;
+        font-size: 1.8rem;
+        color: #555;
+        padding: 2rem;
+    }
+
+    .gameArea {
+    width: 900px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background:linear-gradient(to bottom, #a5e5ee, #e0f7fa);
+    border-radius: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* padding: 10px; */
+    transform: scale(0.8);
+}
+.frogArea{
+    width: 1000px;
+    height: 800px;
+    border: 1px ;
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+    position: relative;
+    /* background:linear-gradient(to bottom, #167380, #b2ebf2); */
+    opacity: 0.8;
+      
+}
+.questionArea {
+   
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    
+}
+.questionArea p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+}
+.stepPoint.active {
+    color: white;
+    background-image: url("./img/frog.png");
+    background-size: cover;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+    transform: scale(1.2);
+}
+.optionArea {
+    width: 720px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;}
+
+.optionArea button {
+    width: 200px;
+    height: 50px;
+    background-color: #ffcc80;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 18px;
+}
