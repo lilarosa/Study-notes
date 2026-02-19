@@ -25,12 +25,13 @@ Goal: Keep only source and learning materials in Git, remove IDE/runtime noise, 
 ## 5) Keep Git clean after migration
 - [x] Run: `git status`
 - [x] Confirm no `*.class`, `bin/`, `.metadata/` files are tracked
-- [ ] Stage only intended source moves and docs
+- [x] Stage only intended source moves and docs
 
 ## Suggested move order (safe)
 1. Move one area at a time (Java first, then web)
 2. Commit each area separately
 3. Verify run/build in IDE after each commit
+
 
 
 

@@ -1,18 +1,30 @@
-# 📚 lilarosa - Lernnotizen & Hausaufgaben
+﻿# lilarosa - Lernnotizen und Hausaufgaben
 
-Dies ist mein zentrales Repository für alle Kursmaterialien und Hausaufgaben. Hier synchronisiere ich meine täglichen Codes aus dem Unterricht, um von überall darauf zugreifen zu können.
+Zentrales Repository fuer Unterrichtsmaterialien, Uebungen und eigene Projekte.
 
-## 🎓 Kurse
-* **Kursname 1** (z.B. Informatik) - `/Kurs-1`
-* **Kursname 2** (z.B. Programmierung) - `/Kurs-2`
+## Struktur
 
+- `courses/java/`
+  - Java Lerncode und Uebungen
+- `courses/web/`
+  - HTML/CSS/JavaScript Lernmaterialien
+- `projects/`
+  - aktive, laengerfristige Projekte
+- `archive/`
+  - alte oder ersetzte Projektstaende
+- `Java/`, `JavaProjects/`
+  - bisherige Altstruktur (schrittweise bereinigen)
 
-## 🛠️ Tech-Stack
-* **Editor:** VS Code
-* **Sprachen:** Python, Java 
-* **Betriebssystem:** Windows
+## Hinweise
 
+- Build- und IDE-Dateien sind per `.gitignore` ausgeschlossen.
+- Relevanter Quellcode liegt in `courses/` und `projects/`.
 
+## Tech-Stack
+
+- Editor: VS Code, Eclipse
+- Sprachen: Java, JavaScript, HTML, CSS
+- Betriebssystem: Windows
 
 ---
-*Erstellt von lilarosa im Jahr 2026.*
+Erstellt von lilarosa im Jahr 2026.

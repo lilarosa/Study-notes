@@ -1,9 +1,0 @@
-
-/* Beim Clicken auf das ListItem soll ausgegraut und durchgestrichen werden. Beim erneuten Clicken soll das rückgängig gemacht werden. Über eine geeignete class im CSS und in JS über die ClassList */
- 
-.checked {
-    color:grey;
-    text-decoration: line-through;
-    padding: 5px;}
-
-  
