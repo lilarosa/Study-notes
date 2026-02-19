@@ -1,7 +1,0 @@
-INDEX VERSION 1.134+C:\Users\user-vITA05\Tao\Unterricht\Frau Höppner -Billen\Java\Workspace\.metadata\.plugins\org.eclipse.jdt.core
-4060353301.index
-1865797976.index
-1432687087.index
-353684082.index
-653369663.index
-4024695764.index

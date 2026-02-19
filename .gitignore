@@ -1,0 +1,22 @@
+﻿# OS
+.DS_Store
+Thumbs.db
+
+# IDE (only editor settings, not lesson files)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.idea/
+
+# Java / Eclipse
+**/bin/
+**/out/
+**/target/
+**/.metadata/
+**/.settings/
+**/.classpath
+**/.project
+*.class
+
+# Logs
+*.log

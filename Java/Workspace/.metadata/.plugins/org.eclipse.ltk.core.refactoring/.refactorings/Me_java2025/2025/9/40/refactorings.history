@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;selektion.Year&apos; to &apos;LeapYearCheck&apos;&#x0D;&#x0A;- Original project: &apos;Me_java2025&apos;&#x0D;&#x0A;- Original element: &apos;selektion.Year&apos;&#x0D;&#x0A;- Renamed element: &apos;selektion.LeapYearCheck&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Year&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;selektion{Year.java[Year" matchStrategy="1" name="LeapYearCheck" qualified="false" references="true" similarDeclarations="false" stamp="1759215603661" textual="false" version="1.0"/>
-</session>
