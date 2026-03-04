@@ -1,30 +1,29 @@
-﻿# lilarosa - Lernnotizen und Hausaufgaben
+# Study Notes
 
-Zentrales Repository fuer Unterrichtsmaterialien, Uebungen und eigene Projekte.
+## DE: Zweck
+Zentrales Notiz-Repository fuer Lernunterlagen, Kurszusammenfassungen und laufende Wissensdokumentation.
 
-## Struktur
+## DE: Struktur
+- `courses/java/`: Java-Kursmaterial und Uebungen
+- `courses/web/`: HTML, CSS, JavaScript Lerninhalte
+- `projects/`: kleinere aktive Lernprojekte
+- `archive/`: alte oder ersetzte Versionen
 
-- `courses/java/`
-  - Java Lerncode und Uebungen
-- `courses/web/`
-  - HTML/CSS/JavaScript Lernmaterialien
-- `projects/`
-  - aktive, laengerfristige Projekte
-- `archive/`
-  - alte oder ersetzte Projektstaende
-- `Java/`, `JavaProjects/`
-  - bisherige Altstruktur (schrittweise bereinigen)
+## DE: Arbeitsregeln
+- Deutsch als Hauptsprache, Englisch als Zweitsprache.
+- Notizen datiert ablegen (z. B. `2026-03-04-topic.md`).
+- Pro Thema kurze Zusammenfassung und offene Fragen dokumentieren.
 
-## Hinweise
+## EN: Purpose
+Central notes repository for learning material, course summaries, and continuous knowledge documentation.
 
-- Build- und IDE-Dateien sind per `.gitignore` ausgeschlossen.
-- Relevanter Quellcode liegt in `courses/` und `projects/`.
+## EN: Structure
+- `courses/java/`: Java course content and exercises
+- `courses/web/`: HTML, CSS, JavaScript learning materials
+- `projects/`: small active learning projects
+- `archive/`: older or replaced versions
 
-## Tech-Stack
-
-- Editor: VS Code, Eclipse
-- Sprachen: Java, JavaScript, HTML, CSS
-- Betriebssystem: Windows
-
----
-Erstellt von lilarosa im Jahr 2026.
+## EN: Working Rules
+- German first, English second.
+- Use dated note files for traceability.
+- Keep a short summary and open questions per topic.
