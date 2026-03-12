@@ -37,7 +37,7 @@ public class Class_abstract {
       } 
     }
 
-    public class Main {
+class Main {
       public static void main(String[] args) {
         Class_abstract ca = new Class_abstract();
         Class_abstract.Trainer trainer = ca.new Trainer();

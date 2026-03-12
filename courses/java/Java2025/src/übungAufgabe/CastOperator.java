@@ -1,4 +1,4 @@
-package variablen_datentypen_operatoren;
+package übungAufgabe;
 
 public class CastOperator {
 

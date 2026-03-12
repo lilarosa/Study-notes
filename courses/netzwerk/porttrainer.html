@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Quiz - Fachinformatiker Training</title>
+    <style>
+        :root {
+            --color-bg-base: #0f172a;
+            --color-bg-elevated: #1e293b;
+            --color-bg-surface: #334155;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-primary: #38bdf8;
+            --color-primary-hover: #0ea5e9;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --color-warning: #f59e0b;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --color-bg-base: #ffffff;
+                --color-bg-elevated: #f8fafc;
+                --color-bg-surface: #e2e8f0;
+                --color-text-primary: #0f172a;
+                --color-text-secondary: #475569;
+                --color-text-muted: #64748b;
+                --color-primary: #0284c7;
+                --color-primary-hover: #0369a1;
+                --color-success: #059669;
+                --color-error: #dc2626;
+                --color-warning: #d97706;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--color-bg-base);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-bg-surface);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .header p {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: var(--color-bg-elevated);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            border: 1px solid var(--color-bg-surface);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .quiz-card {
+            background: var(--color-bg-elevated);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--color-bg-surface);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-bg-surface);
+        }
+
+        .question-type {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+        .question-counter {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-primary);
+        }
+
+        .answer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-btn {
+            background: var(--color-bg-surface);
+            border: 2px solid var(--color-bg-surface);
+            color: var(--color-text-primary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .answer-btn:hover {
+            border-color: var(--color-primary);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .answer-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .answer-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-success);
+        }
+
+        .answer-btn.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--color-error);
+            color: var(--color-error);
+        }
+
+        .feedback {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--color-success);
+            color: var(--color-success);
+        }
+
+        .feedback.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--color-error);
+            color: var(--color-error);
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-bg-base);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: var(--color-primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--color-bg-surface);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-bg-surface);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            border-color: var(--color-primary);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .completion-screen {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .completion-screen h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .final-score {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+        }
+
+        .score-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .answer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LF9 - Portnummer-Protokoll Trainer</h1>
+            <p>PV_APT1/2</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-label">Frage</div>
+                <div class="stat-value" id="currentQuestion">0/20</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Richtig</div>
+                <div class="stat-value" id="correctCount">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Falsch</div>
+                <div class="stat-value" id="incorrectCount">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Erfolgsquote</div>
+                <div class="stat-value" id="successRate">0%</div>
+            </div>
+        </div>
+
+        <div id="quizSection" class="quiz-card">
+            <div class="question-header">
+                <span class="question-type" id="questionType">Port zu Protokoll</span>
+                <span class="question-counter" id="questionProgress">Frage 1 von 20</span>
+            </div>
+
+            <div class="question-text" id="questionText">
+                Lädt...
+            </div>
+
+            <div class="answer-grid" id="answerGrid">
+            </div>
+
+            <div class="feedback" id="feedback">
+            </div>
+
+            <div class="control-buttons">
+                <button class="btn btn-primary" id="nextBtn" disabled>Nächste Frage</button>
+                <button class="btn btn-secondary" id="restartBtn">Quiz neu starten</button>
+            </div>
+        </div>
+
+        <div id="completionScreen" class="quiz-card completion-screen hidden">
+            <h2>Quiz abgeschlossen!</h2>
+            <div class="final-score" id="finalScore">0/20</div>
+            <div class="score-details">
+                <div class="stat-card">
+                    <div class="stat-label">Richtig beantwortet</div>
+                    <div class="stat-value" id="finalCorrect">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Falsch beantwortet</div>
+                    <div class="stat-value" id="finalIncorrect">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Erfolgsquote</div>
+                    <div class="stat-value" id="finalRate">0%</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="restartFromEndBtn">Neues Quiz starten</button>
+        </div>
+    </div>
+
+    <script>
+        const portDatabase = [
+            { protocol: 'FTP-Data', port: 20, transport: 'TCP', description: 'File Transfer Protocol (Datenkanal)' },
+            { protocol: 'FTP-Control', port: 21, transport: 'TCP', description: 'File Transfer Protocol (Steuerkanal)' },
+            { protocol: 'SSH', port: 22, transport: 'TCP', description: 'Secure Shell' },
+            { protocol: 'Telnet', port: 23, transport: 'TCP', description: 'Telnet Remote-Konsole' },
+            { protocol: 'SMTP', port: 25, transport: 'TCP', description: 'Simple Mail Transfer Protocol' },
+            { protocol: 'DNS', port: 53, transport: 'TCP/UDP', description: 'Domain Name System' },
+            { protocol: 'DHCP-Server', port: 67, transport: 'UDP', description: 'Dynamic Host Configuration Protocol (Server)' },
+            { protocol: 'DHCP-Client', port: 68, transport: 'UDP', description: 'Dynamic Host Configuration Protocol (Client)' },
+            { protocol: 'TFTP', port: 69, transport: 'UDP', description: 'Trivial File Transfer Protocol' },
+            { protocol: 'HTTP', port: 80, transport: 'TCP', description: 'Hypertext Transfer Protocol' },
+            { protocol: 'POP3', port: 110, transport: 'TCP', description: 'Post Office Protocol v3' },
+            { protocol: 'NNTP', port: 119, transport: 'TCP', description: 'Network News Transfer Protocol' },
+            { protocol: 'NTP', port: 123, transport: 'UDP', description: 'Network Time Protocol' },
+            { protocol: 'NetBIOS-NS', port: 137, transport: 'UDP', description: 'NetBIOS Name Service' },
+            { protocol: 'NetBIOS-DGM', port: 138, transport: 'UDP', description: 'NetBIOS Datagram Service' },
+            { protocol: 'NetBIOS-SSN', port: 139, transport: 'TCP', description: 'NetBIOS Session Service' },
+            { protocol: 'IMAP', port: 143, transport: 'TCP', description: 'Internet Message Access Protocol' },
+            { protocol: 'SNMP', port: 161, transport: 'UDP', description: 'Simple Network Management Protocol' },
+            { protocol: 'SNMP-Trap', port: 162, transport: 'UDP', description: 'SNMP Trap' },
+            { protocol: 'LDAP', port: 389, transport: 'TCP/UDP', description: 'Lightweight Directory Access Protocol' },
+            { protocol: 'HTTPS', port: 443, transport: 'TCP', description: 'HTTP Secure' },
+            { protocol: 'SMB', port: 445, transport: 'TCP', description: 'Server Message Block' },
+            { protocol: 'SMTPS', port: 465, transport: 'TCP', description: 'SMTP Secure' },
+            { protocol: 'Syslog', port: 514, transport: 'UDP', description: 'Syslog Protocol' },
+            { protocol: 'SMTP-Submission', port: 587, transport: 'TCP', description: 'Mail Submission' },
+            { protocol: 'LDAPS', port: 636, transport: 'TCP', description: 'LDAP Secure' },
+            { protocol: 'IMAPS', port: 993, transport: 'TCP', description: 'IMAP Secure' },
+            { protocol: 'POP3S', port: 995, transport: 'TCP', description: 'POP3 Secure' },
+            { protocol: 'MS-SQL', port: 1433, transport: 'TCP', description: 'Microsoft SQL Server' },
+            { protocol: 'RADIUS-Auth', port: 1812, transport: 'UDP', description: 'RADIUS Authentication' },
+            { protocol: 'RADIUS-Acct', port: 1813, transport: 'UDP', description: 'RADIUS Accounting' },
+            { protocol: 'NFS', port: 2049, transport: 'TCP/UDP', description: 'Network File System' },
+            { protocol: 'MySQL', port: 3306, transport: 'TCP', description: 'MySQL Database' },
+            { protocol: 'RDP', port: 3389, transport: 'TCP', description: 'Remote Desktop Protocol' },
+            { protocol: 'SIP', port: 5060, transport: 'TCP/UDP', description: 'Session Initiation Protocol' },
+            { protocol: 'PostgreSQL', port: 5432, transport: 'TCP', description: 'PostgreSQL Database' },
+            { protocol: 'VNC', port: 5900, transport: 'TCP', description: 'Virtual Network Computing' },
+            { protocol: 'X11', port: 6000, transport: 'TCP', description: 'X Window System' },
+            { protocol: 'Redis', port: 6379, transport: 'TCP', description: 'Redis Database' },
+            { protocol: 'Proxy', port: 8080, transport: 'TCP', description: 'HTTP Proxy' }
+        ];
+
+        let currentQuiz = [];
+        let currentIndex = 0;
+        let correctAnswers = 0;
+        let incorrectAnswers = 0;
+        let answered = false;
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function generateQuiz() {
+            const shuffled = shuffleArray(portDatabase);
+            const quiz = [];
+
+            for (let i = 0; i < 10; i++) {
+                quiz.push({
+                    type: 'portToProtocol',
+                    data: shuffled[i]
+                });
+            }
+
+            for (let i = 10; i < 20; i++) {
+                quiz.push({
+                    type: 'protocolToPort',
+                    data: shuffled[i]
+                });
+            }
+
+            return shuffleArray(quiz);
+        }
+
+        function getRandomOptions(correct, allData, count = 3) {
+            const options = [correct];
+            const available = allData.filter(item => item !== correct);
+            const shuffled = shuffleArray(available);
+            
+            for (let i = 0; i < count && i < shuffled.length; i++) {
+                options.push(shuffled[i]);
+            }
+            
+            return shuffleArray(options);
+        }
+
+        function displayQuestion() {
+            answered = false;
+            const question = currentQuiz[currentIndex];
+            const questionType = document.getElementById('questionType');
+            const questionText = document.getElementById('questionText');
+            const answerGrid = document.getElementById('answerGrid');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('nextBtn');
+
+            feedback.classList.remove('show', 'correct', 'incorrect');
+            nextBtn.disabled = true;
+            answerGrid.innerHTML = '';
+
+            document.getElementById('questionProgress').textContent = `Frage ${currentIndex + 1} von 20`;
+            document.getElementById('currentQuestion').textContent = `${currentIndex + 1}/20`;
+
+            if (question.type === 'portToProtocol') {
+                questionType.textContent = 'Port → Protokoll';
+                questionText.innerHTML = `Welches Protokoll verwendet <strong>Port ${question.data.port}</strong>?`;
+                
+                const options = getRandomOptions(
+                    question.data.protocol,
+                    portDatabase.map(p => p.protocol)
+                );
+
+                options.forEach(option => {
+                    const btn = document.createElement('button');
+                    btn.className = 'answer-btn';
+                    btn.textContent = option;
+                    btn.onclick = () => checkAnswer(option, question.data.protocol, btn);
+                    answerGrid.appendChild(btn);
+                });
+            } else {
+                questionType.textContent = 'Protokoll → Port';
+                questionText.innerHTML = `Welchen Port verwendet das Protokoll <strong>${question.data.protocol}</strong>?`;
+                
+                const options = getRandomOptions(
+                    question.data.port,
+                    portDatabase.map(p => p.port)
+                );
+
+                options.forEach(option => {
+                    const btn = document.createElement('button');
+                    btn.className = 'answer-btn';
+                    btn.textContent = option;
+                    btn.onclick = () => checkAnswer(option, question.data.port, btn);
+                    answerGrid.appendChild(btn);
+                });
+            }
+        }
+
+        function checkAnswer(selected, correct, clickedBtn) {
+            if (answered) return;
+            answered = true;
+
+            const buttons = document.querySelectorAll('.answer-btn');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('nextBtn');
+            const question = currentQuiz[currentIndex];
+
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (selected === correct) {
+                clickedBtn.classList.add('correct');
+                correctAnswers++;
+                feedback.className = 'feedback show correct';
+                feedback.innerHTML = `
+                    <strong>✓ Richtig!</strong><br>
+                    ${question.data.protocol} → Port ${question.data.port} (${question.data.transport})<br>
+                    <em>${question.data.description}</em>
+                `;
+            } else {
+                clickedBtn.classList.add('incorrect');
+                buttons.forEach(btn => {
+                    if ((question.type === 'portToProtocol' && btn.textContent === correct) ||
+                        (question.type === 'protocolToPort' && parseInt(btn.textContent) === correct)) {
+                        btn.classList.add('correct');
+                    }
+                });
+                incorrectAnswers++;
+                feedback.className = 'feedback show incorrect';
+                feedback.innerHTML = `
+                    <strong>✗ Falsch!</strong><br>
+                    Richtige Antwort: ${question.data.protocol} → Port ${question.data.port} (${question.data.transport})<br>
+                    <em>${question.data.description}</em>
+                `;
+            }
+
+            updateStats();
+            nextBtn.disabled = false;
+        }
+
+        function updateStats() {
+            document.getElementById('correctCount').textContent = correctAnswers;
+            document.getElementById('incorrectCount').textContent = incorrectAnswers;
+            
+            const totalAnswered = correctAnswers + incorrectAnswers;
+            const rate = totalAnswered > 0 ? Math.round((correctAnswers / totalAnswered) * 100) : 0;
+            document.getElementById('successRate').textContent = rate + '%';
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            
+            if (currentIndex < currentQuiz.length) {
+                displayQuestion();
+            } else {
+                showCompletionScreen();
+            }
+        }
+
+        function showCompletionScreen() {
+            document.getElementById('quizSection').classList.add('hidden');
+            document.getElementById('completionScreen').classList.remove('hidden');
+            
+            document.getElementById('finalScore').textContent = `${correctAnswers}/20`;
+            document.getElementById('finalCorrect').textContent = correctAnswers;
+            document.getElementById('finalIncorrect').textContent = incorrectAnswers;
+            
+            const rate = Math.round((correctAnswers / 20) * 100);
+            document.getElementById('finalRate').textContent = rate + '%';
+        }
+
+        function startQuiz() {
+            currentQuiz = generateQuiz();
+            currentIndex = 0;
+            correctAnswers = 0;
+            incorrectAnswers = 0;
+            answered = false;
+
+            document.getElementById('quizSection').classList.remove('hidden');
+            document.getElementById('completionScreen').classList.add('hidden');
+            
+            updateStats();
+            displayQuestion();
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+        document.getElementById('restartBtn').addEventListener('click', startQuiz);
+        document.getElementById('restartFromEndBtn').addEventListener('click', startQuiz);
+
+        startQuiz();
+    </script>
+</body>
+</html>

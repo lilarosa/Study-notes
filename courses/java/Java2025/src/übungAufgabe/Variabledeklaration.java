@@ -1,9 +1,8 @@
-package variablen_datentypen_operatoren;
+package übungAufgabe;
 
 public class Variabledeklaration {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		double reelleZahl, reelleZahl2; //Deklaration
 		char buchstable;

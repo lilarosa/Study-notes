@@ -1,7 +1,8 @@
 package ihk.lagerverwaltung.model;
-
+// Represents an item in a sales order, linking a product with a quantity and the price at the time of order.
 public class OrderItem {
-    private final Product product;
+    private final Product product; // reference to the product, not a copy
+
     private final int quantity;
     private final double unitPriceAtOrder;
 

@@ -11,8 +11,8 @@ public class LagerApp {
         InventoryService inventory = new InventoryService();
         OrderService orders = new OrderService(inventory);
 
-        inventory.addProduct(new Product("P-100", "Laptop", 1299.99, 5));
-        inventory.addProduct(new Product("P-200", "Mouse", 25.50, 50));
+        inventory.addProduct(new Product("P-100", "Laptop", "IT", 1299.99, 5));
+        inventory.addProduct(new Product("P-200", "Mouse", "Office" ,225.50, 50));
 
         Customer customer = new Customer("C-1", "Mia Weber", "mia.weber@example.de");
         SalesOrder order = orders.createOrder(customer);
