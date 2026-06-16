@@ -1,0 +1,41 @@
+//leere das Eingabefeld, nachdem der Wert im Array gespeichert wurde
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Einkaufsliste</h1>
+ 
+    <label for="eingabe">Eingabe: </label>
+    <input type="text" id="eingabe">
+ 
+    <button type="button" id="add">Hinzufügen</button>
+    <button type="button" id="print">Drucken</button>
+</body>
+ 
+<script>
+    const addButton = document.getElementById("add");
+    const printButton = document.getElementById("print");
+    let einkaufsliste = [];
+ 
+    addButton.onclick = addToList;
+    function addToList(){
+        let eintrag = document.getElementById("eingabe").value;
+        einkaufsliste.push(eintrag);
+        document.getElementById("eingabe").value = ""; //leere das Eingabefeld, nachdem der Wert im Array gespeichert wurde
+    }
+ 
+    printButton.onclick = printList;
+    function printList(){
+        for(let i = 0; i < einkaufsliste.length; i++){
+            console.log("-" + einkaufsliste[i]);
+        }
+    }
+ 
+</script>
+</html>
+ 

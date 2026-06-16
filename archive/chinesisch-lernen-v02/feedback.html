@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="nav.css">
+    <link rel="stylesheet" href="print.css">
+    <style>
+        body{
+          /* background: linear-gradient(to bottom right, rgb(189, 244, 189), rgb(150, 203, 241)); */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            height: 100vh;
+        }
+       h2{
+        font-size: 2rem;
+        text-align: center;
+       }
+      form{
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items:center;
+    
+      }
+      form div {
+        display: flex;
+        width: 300px;
+        align-items: flex-start;
+      }
+     label{
+        width: 90px; /* Fixed width for labels */
+        margin-right: 10px; /* Space between label and input */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: #555;
+        font-size: 16px;
+        text-align: left;
+        font-weight: 450;
+        
+     }
+     input, textarea {
+        flex: 1;
+        width: 100%; /* Full width of the parent div */
+        padding: 1rem;
+        font-size: 1rem;
+        box-sizing: border-box; /* Ensures padding is included in width */
+        border: 1px solid #ccc;
+        border-radius: 4px; /* Rounded corners */
+        font-size: 16px;
+        transition: border-color 0.3s ease; /* Smooth transition for focus effect */
+
+      }
+
+      button {
+        background-color: #4CAF50; /* Green */
+        width: fit-content;
+        color: white;
+        margin: 1.5rem auto;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      }
+      button:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+      fieldset{
+      
+        background-color: #ffffff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+        width: 30%; /* Fixed width for the fieldset */
+        margin: 3rem auto; /* Center the fieldset */
+      }
+      fieldset legend{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: rgb(16, 15, 15);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0 10px; /* Padding for the legend */
+        color: gray; /* Green color for the legend */
+      }
+      fieldset p{
+        font-size: 16px;
+        color: #555;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="hanzi.html" >Lektionen</a></li>
+        <li><a href="game.html" >Spiele</a></li>
+        <li><a href="homework.html">Homework</a></li>
+        <li><a href="feedback.html" class="aktive">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+    <!-- <h2>Kontakt Formular</h2> -->
+    <fieldset>
+        <legend>Wir freuen uns auf Ihre Nachricht!</legend>
+    <form action="#" method="post">
+        <div>
+        <label for="anrede">Anrede:</label>
+        <select id="anrede" name="anrede" required>
+            <option value="" disabled selected>Bitte wählen</option>
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="Divers">Divers</option></select>
+        </div>
+        <div>
+        <label for="name">Vorname:</label>
+        <input type="text" id="vorname" name="vorname" required>
+        </div>
+        <div>
+        <label for="name">Nachname:</label>
+        <input type="text" id="nachname" name="nachname" required>
+        </div>
+        <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required></div>
+        <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht hier eingeben..."  maxlength="500"  minlength="10"  cols="30"  minlength="10"  maxlength="500"  
+         required></textarea></div>
+        <div>
+        <label for="subject"></label>
+        <button type="submit" onclick="feedback()" >Send</button>
+        </div></fieldset>
+ </form>
+ <script>
+    function feedback() {
+        const vorname= document.getElementById("vorname").value;
+        const nachename= document.getElementById("nachname").value;
+        const anrede = document.getElementById("anrede").value;
+        const message=document.getElementById("message").value;
+        if(!vorname||!nachname||!anrede||!message){
+          alert("Bitte füllen Sie alle Felder aus!");
+          return false;
+
+          }
+        
+        if(anrede === "Herr") {
+            alert(`Sehr geehrter ${vorname} ${nachename}, Danke für ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.`);
+        } else if(anrede === "Frau") {
+            alert(`Sehr geehrte ${vorname} ${nachename}, Danke für ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.`);
+        } else {
+            alert(`Sehr geehrte/r ${vorname} ${nachename}, Danke für ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.`);
+        }
+    }
+    
+    </script>
+</body>
+</html>

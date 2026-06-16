@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinaoNavbar</title>
+    <style>
+        .navBar{
+            display:flex;
+         flex-direction:row;
+         background-color: #f0f0f0;
+         gap: 10px;
+         align-items: end;
+
+        }
+        .nav_div{
+            /* flex:1; */
+            width: 70px;
+            color: rgb(26, 16, 3);
+            background-color: rgba(170, 120, 26, 0.904);
+            border: 3px solid rgb(66, 138, 24);
+            /* padding: 10px; */
+            
+        }
+    </style>
+    <script>
+        function pointer(){
+            const pointerPic="url('little.png') 16 16, auto";
+            const area= document.querySelectorAll('.nav_div');
+            area.forEach((element) =>{
+                element.addEventListener('mouseover', function(){
+                    element.style.cursor = pointerPic;  
+                });
+                element.addEventListener('mouseleave', function () {
+            element.style.cursor = 'auto';
+            });
+        }
+            );
+        }
+        
+        window.addEventListener('load', pointer);
+    </script></head>
+<body>
+      <nav class="navBar">
+        <div class="nav_div">🏠 Startseite</div>
+        <div class="nav_div">📖 Lernen<br>mit <br>spaß Spielen  </div>
+        <div class="nav_div">✍️ Zeichen aufbauen wie Lego</div>
+        <div class="nav_div">🎮 Spiele</div>
+        <div class="nav_div">Was macht dir Mester</div>
+        <div class="nav_div"> Hast du Fragen?</div>
+        <div class="nav_div">✍️Ich freue mich auf dich zu sehen und hören</div>
+           
+          
+      </nav>
+    
+</body>
+</html>

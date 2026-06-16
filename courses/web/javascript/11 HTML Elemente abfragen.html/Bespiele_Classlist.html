@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>ClassList</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: red;
+        }
+
+        .newClass {
+            background-color: lightblue;
+            color: darkblue;
+        }
+
+        </style>
+</head>
+<body>
+    <h1 id="heading1">Klicke die Button um die Klassen zu ändern</h1>
+    <button id="addClass">Klasse hinzufügen</button>
+    <button id="removeClass">Klasse entfernen</button>
+    <button id="toggleClass">Klasse umschalten</button>
+    <button id="checkClass">Klasse überprüfen</button>
+    <button id="replaceClass">Klasse ersetzen</button>
+
+
+    <script>
+        const header = document.getElementById("heading1");
+        const btnAdd= document.getElementById("addClass");
+        btnAdd.onclick = function(){
+            header.classList.add("highlight");
+            console.log("Klasse hinzufügt: newClass");
+        }
+        const btnRemove =document.getElementById("removeClass");
+        btnRemove.onclick = function(){
+            header.classList.remove("highlight");
+            console.log("Klasse entfernt: newClass");
+        }
+
+        const btnToggle = document.getElementById("toggleClass");
+        btnToggle.onclick = function(){
+            header.classList.toggle("highlight");
+            console.log("Klasse umgeschaltet: highlight");
+        }
+
+        const btnCheck = document.getElementById("checkClass");
+        btnCheck.onclick = function(){
+            if(header.classList.contains("highlight")){
+                console.log("Klasse 'highlight' ist vorhanden.");
+            } else {
+                console.log("Klasse 'highlight' ist nicht vorhanden.");
+            }
+        }
+
+        const btnReplace =  document.getElementById("replaceClass");
+        btnReplace.onclick = function(){
+            header.classList.replace("highlight", "newClass");
+            console.log("Klasse ersetzt: highlight mit newClass");
+        }
+
+    </script>
+</body>
+</html>

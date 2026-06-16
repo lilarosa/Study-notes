@@ -1,0 +1,108 @@
+body {
+    /* color: #001858; 
+    background-color: white; */
+    color: white;
+    background-color: #333;
+    max-width: 600px;
+    margin: auto;   
+}
+ 
+/* Gestalten die den Kopfbereich (header) in einerm dunklen 
+Hintergrund mit weißer Schrift */
+ 
+/* header {
+    background-color: black;
+    color:  white;
+    padding: 1rem;
+} */
+ 
+.site-header h1 {
+    margin-bottom: 0;
+}
+ 
+ 
+.site-nav ul {
+    margin: 0;
+    padding: 0;  
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}
+ 
+.site-nav li {
+    display: inline;
+    flex: 1;
+    text-align: center;
+    border: 1px solid white;
+    /* margin-right: 0.5rem; */
+}
+ 
+ 
+.site-nav a {
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+ 
+ 
+.current a {
+    background-color: #666;
+    color: white;
+}
+ 
+ 
+/* Gestaltung des Inhaltsbereichs */
+ 
+.content-infoboxen {
+    background-color: gray;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+ 
+.content-infobox {
+    text-align: center;
+    background-color: lightgray;
+    padding: 1rem;
+    margin: 1rem;
+}
+ 
+ 
+/*Gestaltung des Fußbereichs*/
+/* schwarzer Hintergrund, weiße Schrift, keine Unterstreichung */
+ 
+.site-footer {
+    background-color: #333;   
+    padding: 0.5rem;
+    text-align: right;
+    border: 1px solid white;
+}
+ 
+.site-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+@media print{
+
+    /* zusätzliche und abweichende CSS-Regeln für den Druck */
+
+    body{
+        /* background color har keine Auswirkung, er druckt immer weiß */
+        background-color: yellowgreen;
+        color: black;
+    }
+
+    .site-nav, .site-footer{
+
+        display: none;
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    
+}

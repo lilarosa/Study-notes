@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanzi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Fredoka:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    
+  nav ul{
+        padding-top: 0;
+        border: none;
+        gap:15px;
+        background: none;
+       
+      }
+      nav li {
+        height: 40px;
+        border: none;
+        background-color: #a5d5f9;
+        border-radius: 5px;
+      
+        
+      }
+      nav ul li a {
+        display: block;
+        height: 25px;
+        padding: 0.5rem 0; 
+        text-align: center;
+        color: black;
+      }
+      .aktive{
+        border-radius: 5px;
+      }
+    body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            height: 100vh;
+        }
+        main {
+            width: 60%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+          background-color: #faf7f0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .hanziDev {
+            flex:1;
+            padding: 20px;
+            /* border-radius: 8px; */
+        }
+         .hanziBasic{
+          flex: 1;
+          padding: 20px;
+        }
+        .hanziBuild{
+          flex: 1;
+          padding: 20px;
+        }
+        #hanziEvoImg {
+           
+            
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            float: left;
+            margin: 10px 10px;
+        }
+       
+
+        h2, h3 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 600px;
+          height: 50px;
+          padding: 0.5rem 0.5rem;
+          margin: 1rem auto;
+            color: #333;
+            font-size: 1.5rem;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            background: linear-gradient(50deg ,#73c1ee,#ffe0e0);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px center;
+           }
+          
+           p{
+            color: #666666;
+            font-size: 1.2rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-top: 1rem;
+            line-height: 1.7rem;
+            margin: 10px;
+            text-align: left;
+           }
+           #float-right{
+            float: right;
+            margin-left: 20px 10px 10px 20px;
+            
+           }
+           
+</style> 
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="hanzi.html"  class="aktive" >Lektionen</a></li>
+        <li><a href="game.html" >Spiele</a></li>
+        <li><a href="homework.html" >Homework</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+            <div>
+                <h1> 🐉 Willkommen in der Welt der chinesischen Schriftzeichen!</h1>
+            </div>
+            <div class="hanziDev">
+                <h3>🕰️ Wie sind Hanzi entstanden?</h3>
+                <img id="hanziEvoImg" src="bilder/hanziDev1.jpg" alt="Hanzi Entwicklung 1" width="250px">
+                <p>
+                    Vor langer, langer Zeit haben Menschen Bilder gezeichnet, um Dinge zu zeigen, zum Beispiel:<br> von der Sonne ☀️, Bäumen 🌳 oder Tieren 🐮
+Daraus wurden Piktogramme, also Bild-Zeichen.<br>
+Diese Bilder wurden mit der Zeit immer einfacher, und daraus sind Hanzi geworden!
+So wurde aus einem Bild ein Zeichen, das man schreiben und lesen kann.
+Vor tausenden von Jahren malten die Menschen Bilder auf Knochen und Schildkrötenpanzer. Diese Bilder nannten sich „Orakelknochen-Schrift“ (甲骨文). Zum Beispiel:
+
+Ein Kreis mit einem Punkt 🌞 = die Sonne (日)
+
+Zwei Bergspitzen ⛰️ = Berg (山)
+So wurden aus Bildern Zeichen!
+                </p>
+        </div>
+        <div class="hanziBasic">
+            <h3>🧩 Hanzi sind wie Lego! </h3>
+  <div class="radikaleImage">          
+<img src="bilder/radikle_hand.webp"  alt="Radikale Haus" width="400px">
+</div>
+<p>
+Ein Hanzi ist oft aus kleineren Teilen gebaut – die nennen wir Radikale (auf Chinesisch: 部首 bùshǒu).<br>
+👉 Diese Radikale zeigen oft die Bedeutung oder die Aussprache eines Zeichens.<br>
+📚 Insgesamt gibt es über 200 Radikale, aber für Anfänger reichen etwa 40–50 ganz häufige.<br>
+ </p>
+ </div>
+<div class="hanziBuild">
+ <h3>🏗️  So baut man ein Zeichen</h3>
+ <img src="bilder/hanziBuil.webp" id="float-right" alt="component" width="300px">
+<p>Ein Hanzi besteht oft aus:
+einem Bedeutungs-Radikal auf der linken Seite oder oben
+einem Laut-Radikal oder anderen Teil auf der rechten Seite oder unten
+Viele Zeichen bestehen aus zwei oder mehr kleinen Zeichen.
+Sie zeigen zusammen eine neue Bedeutung.
+Das nennt man zusammengesetzte Zeichen (会意字).
+✅ Beispiel:
+明 = 日 (Sonne) + 月 (Mond) = hell
+休 = 亻(Mensch) + 木 (Baum) = sich ausruhen
+Die meisten Hanzi bestehen aus zwei Teilen:
+Ein Teil zeigt die Bedeutung,
+Ein Teil zeigt den Klang.
+Das nennt man Lautzeichen (形声字).
+✅ Beispiel:
+河 = 氵(Wasser) + 可 (kě) = Fluss
+妈 = 女 (Frau) + 马 (mǎ) = Mama</p>
+    
+  
+
+  </main>
+</body>
+</html>
+ 

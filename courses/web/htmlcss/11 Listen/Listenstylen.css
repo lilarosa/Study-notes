@@ -1,0 +1,47 @@
+
+
+/* Aufzählungssysterm andern */
+.liste1{
+    list-style-type: circle;
+
+}
+.liste2{
+    list-style-position: inside;
+
+}
+/* eigenesbild as Symbol verwenden */
+.liste3{
+    list-style-image: url('pfeil.png');
+    list-style-position: inside;
+
+}
+
+/* kurzschreibweise,wenn das Bild nicht erreicht ´dann zurück zu erste*/
+.liste4{
+    list-style: square inside url('pfeil.png');
+}
+/* display ändern */
+.liste5 li{
+    display: inline-block;
+}
+
+/* mit Pseudo Code */
+.liste6 li::marker
+{
+    color: red;
+    font-size: 2em;
+}
+
+/* mit bild marker (copy von website) */
+.liste7 li::marker
+{
+    content: '🤩';
+    
+}
+.liste8 li::marker
+{
+    content:(counter(list-item)); 
+    color: blueviolet;
+    font-weight: bold;
+    
+}

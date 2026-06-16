@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        .gruen {
+            color: green;
+        }
+
+        .rot {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mit JS Attribute manipulieren</h1>
+    <p id="p1" class="gruen">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, accusantium?</p>
+
+    <br>
+
+    <input type="checkbox" name="check" id="check" checked required>
+
+    <button id="but">Click me!</button>
+</body>
+<script>
+
+    const but = document.getElementById("but");
+    but.onclick = toggleColor;
+
+    function toggleColor() {
+
+        if(document.getElementById("p1").getAttribute("class") == "rot"){
+            document.getElementById("p1").setAttribute("class", "gruen");
+            document.getElementById("check").setAttribute("type", "radio")
+        }
+        else {
+            document.getElementById("p1").setAttribute("class", "rot");
+            document.getElementById("check").setAttribute("type", "checkbox")
+        }
+        
+        
+    }
+
+
+</script>
+
+</html>

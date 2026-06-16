@@ -1,0 +1,32 @@
+div{ 
+    width: 200;
+    height: 200;
+    background-color: cadetblue;
+    margin-bottom: 20px;}
+
+ #div1{
+    border-width:20px;
+    border-style: solid;
+    border-color: greenyellow;
+   }
+#div2{
+    border: 20px dotted brown;
+    }
+#div3{
+    border: 20px double blue;
+    }
+#div4{
+    border: 20px 10px groove red;
+    }
+#div5{
+    border-bottom:  10px outset yellow;
+    border-top: 20px inset blue;
+    border-left: 30px ridge green;
+    }
+#div6{border:dotted;
+    border-radius: 10px 20px 30px 40px;
+    border-color: aquamarine; }
+
+
+   
+
