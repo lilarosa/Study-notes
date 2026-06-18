@@ -15,5 +15,6 @@ public class Kunde {
 		this.name = name;
 		
 	}
+	
 	}
 
