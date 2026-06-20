@@ -15,9 +15,6 @@ public class ArtikelListe {
 	// 声明一个 String 类型的属性，用来保存列表名称
 	// String 也是类，所以默认值也是 null
 	
-	private int anzahlArtikel;
-	//artikelListe.size()可以代替这个变量
-	
 	public ArtikelListe(String listenName) {
 	    this.listenName = listenName;
 	    // 把传进来的列表名字保存到对象属性中
@@ -32,18 +29,18 @@ public class ArtikelListe {
 	}
 	public void addArtikel(Artikel artikel)	{
 		artikelListe.add(artikel);
-		anzahlArtikel++;
 	}
 	public void removeArtikel(Artikel artikel) {
-		if(artikelListe.contains(artikel)) {
 		artikelListe.remove(artikel);
-		anzahlArtikel--;
-		}
 	}
 	public int getAnzahlArtikel() {
 		//return artikelListe.size();这样更安全，因为数量永远和列表真实内容一致。
-		return anzahlArtikel;
+		return artikelListe.size();
 	
+	}
+
+	public String getListenName() {
+		return listenName;
 	}
 	
 }

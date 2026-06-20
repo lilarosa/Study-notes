@@ -1,6 +1,6 @@
 package uebung_kalssendiagramm_Artikel;//Warenkorb ist eine spezielle Artikelliste
 
-public class Warenkorb extends ArtikelListe{
+public class Warenkorb extends ArtikelListe implements Druckbar {
 
 	private Kunde kunde;
 	
@@ -23,14 +23,17 @@ public class Warenkorb extends ArtikelListe{
 	
 	public void warenkorbAnzeigen() {
 		System.out.println("Kunde name: "+ kunde.getName());
-		double summe = 0;
 		for (Artikel artikel : getArtikelListe()) {
-			System.out.println("Waren :"+artikel.getArtikelName());
-			summe += artikel.getPreis();
+			artikel.anzeigen();
 		}
 		
-		System.out.println("summe: " + summe);
+		System.out.println("Summe: " + berechneGesamtpreis() + " EURO");
 		
+	}
+
+	@Override
+	public void drucken() {
+		warenkorbAnzeigen();
 	}
 		
 	}

@@ -1,7 +1,7 @@
 package uebung_kalssendiagramm_Artikel;
 
 
-public class Kunde {
+public class Kunde implements Druckbar {
 	private String name;
 	
 	public Kunde(String name) {
@@ -15,6 +15,10 @@ public class Kunde {
 		this.name = name;
 		
 	}
+
+	@Override
+	public void drucken() {
+		System.out.println("Kunde: " + name);
+	}
 	
 	}
-

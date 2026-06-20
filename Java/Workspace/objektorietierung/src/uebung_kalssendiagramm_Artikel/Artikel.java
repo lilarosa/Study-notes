@@ -2,19 +2,19 @@ package uebung_kalssendiagramm_Artikel;
 
 public class Artikel implements Druckbar {
 	private String artikelName;
-	private double Grosse;
+	private double grosse;
 	private double preis;
 	
-	public Artikel(String artikelName, double Grosse, double preis) {
+	public Artikel(String artikelName, double grosse, double preis) {
 		this.artikelName = artikelName;
-		this.Grosse = Grosse;
+		this.grosse = grosse;
 		this.preis = preis;
 	}
 	public String getArtikelName() {
 		return artikelName;
 	}
 	public double getGrosse() {
-		return Grosse;
+		return grosse;
 	}
 	
 	public void setArtikelName( String artikelName) {
@@ -28,11 +28,12 @@ public class Artikel implements Druckbar {
 		this.preis = preis;
 	}
 	public void anzeigen() {
-		System.out.println("Artikel: " + artikelName + " | " + "Grosse: " + Grosse + " | " + "Preis: " +preis + " EURO");}
- @Override
+		System.out.println("Artikel: " + artikelName + " | Grosse: " + grosse + " | Preis: " + preis + " EURO");
+	}
+
+	@Override
 	
  	public void drucken() {
-	 System.out.println("Artikel: " + artikelName);
- }
+		anzeigen();
+	}
 }
-
