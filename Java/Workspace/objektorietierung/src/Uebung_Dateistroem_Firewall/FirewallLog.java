@@ -16,7 +16,10 @@ public class FirewallLog {
 				String teile[]= zeile.split(";");
 				
 				int port  = Integer.parseInt(teile[3]);
-				if (port == 445)// if ( teile[2].equals("TCP")) filtered with other factors
+				
+				String action = teile[4];
+				
+				if (port == 445 && action.equals("Drop")) // if ( teile[2].equals("TCP")) filtered with other factors
 					
 				{
 					

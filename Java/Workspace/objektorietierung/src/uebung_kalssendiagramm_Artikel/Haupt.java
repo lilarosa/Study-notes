@@ -20,7 +20,13 @@ public class Haupt {
 		w.warenkorbAnzeigen();
 		wunschliste.addArtikel(b);
 		wunschliste.anzeigen();
-		a.drucken();
+		Druckbar d1 = a;
+		Druckbar d2 = kunde;
+		Druckbar d3 = w;
+
+		d1.drucken();
+		d2.drucken();
+		d3.drucken();
 
 	}
 
