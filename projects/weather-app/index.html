@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天气查询练习</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>天气查询</h1>
+        <p class="subtitle">练习 API 请求、异步处理和错误提示。</p>
+
+        <form id="search-form">
+          <input id="city-input" type="text" placeholder="请输入城市名称" required />
+          <button type="submit">查询</button>
+        </form>
+
+        <div id="status" class="status">输入城市后点击查询。</div>
+        <div id="weather-result" class="result"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
