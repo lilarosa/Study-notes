@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban 看板练习</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="header">
+        <h1>Kanban 看板</h1>
+        <p>练习拖拽交互、状态管理和数据持久化。</p>
+      </section>
+
+      <div class="board">
+        <article class="column">
+          <h2>未开始</h2>
+          <ul class="task-list" data-status="todo"></ul>
+          <form class="add-form" data-status="todo">
+            <input type="text" placeholder="新增任务..." />
+            <button type="submit">添加</button>
+          </form>
+        </article>
+
+        <article class="column">
+          <h2>进行中</h2>
+          <ul class="task-list" data-status="in-progress"></ul>
+          <form class="add-form" data-status="in-progress">
+            <input type="text" placeholder="新增任务..." />
+            <button type="submit">添加</button>
+          </form>
+        </article>
+
+        <article class="column">
+          <h2>已完成</h2>
+          <ul class="task-list" data-status="done"></ul>
+          <form class="add-form" data-status="done">
+            <input type="text" placeholder="新增任务..." />
+            <button type="submit">添加</button>
+          </form>
+        </article>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
