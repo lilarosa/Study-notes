@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List 练习</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card">
+        <h1>Todo List 练习</h1>
+        <p class="subtitle">
+          目标：练习新增、删除、修改、优先级、筛选和本地存储。
+        </p>
+
+        <form id="todo-form">
+          <input id="todo-input" type="text" placeholder="输入你的任务" required />
+          <select id="priority-select">
+            <option value="low">低优先级</option>
+            <option value="medium">中优先级</option>
+            <option value="high">高优先级</option>
+          </select>
+          <button type="submit">添加任务</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="toolbar" role="toolbar" aria-label="筛选任务">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="active">未完成</button>
+          <button class="filter-btn" data-filter="completed">已完成</button>
+        </div>
+
+        <ul id="todo-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
