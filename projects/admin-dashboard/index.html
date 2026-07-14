@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理后台仪表盘练习</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Admin</h2>
+        <nav>
+          <a href="#" class="active">仪表盘</a>
+          <a href="#">用户</a>
+          <a href="#">订单</a>
+          <a href="#">设置</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <h1>仪表盘</h1>
+          <button>新增</button>
+        </header>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <p>用户数</p>
+            <strong>1,248</strong>
+          </article>
+          <article class="stat-card">
+            <p>订单数</p>
+            <strong>320</strong>
+          </article>
+          <article class="stat-card">
+            <p>收入</p>
+            <strong>¥18,900</strong>
+          </article>
+          <article class="stat-card">
+            <p>完成率</p>
+            <strong>87%</strong>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel">
+            <h3>最近订单</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>订单号</th>
+                  <th>用户</th>
+                  <th>状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1001</td>
+                  <td>Alice</td>
+                  <td>已完成</td>
+                </tr>
+                <tr>
+                  <td>#1002</td>
+                  <td>Bob</td>
+                  <td>处理中</td>
+                </tr>
+                <tr>
+                  <td>#1003</td>
+                  <td>Carol</td>
+                  <td>待确认</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="panel">
+            <h3>活动概览</h3>
+            <ul class="activity-list">
+              <li>用户注册 +24</li>
+              <li>订单提交 +8</li>
+              <li>支付成功 +5</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
